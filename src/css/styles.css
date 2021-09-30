@@ -60,7 +60,7 @@
         --big-font-size: 3rem ;
         --h1-font-size:2.75rem ;
         --h2-font-size: 2.5rem ;
-        --h3-font-size: 2.25 ;
+        --h3-font-size: 2.25rem ;
         --normal-font-size:1rem ;
         --small-font-size: .875rem ;
         --smaller-font-size: .813rem;
@@ -134,9 +134,92 @@ img{
     display: grid;
     gap: 1.5rem;
 }
+.header {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: var(--body-color);
+    z-index: var(--z-fixed);
+}
+
 
 
 /*==================== NAV ====================*/
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+    max-width: 968px;
+    transition: .3s;
+
+}
+.nav__logo, .nav__toggle{
+    color: var(--title-color);
+    font-size: var(--normal-font-size);
+}
+
+.nav__logo:hover, .nav__toggle:hover{
+    color:var(--first-color);
+}
+.nav__toggle {
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+    .nav__menu {
+        position: fixed;
+        bottom: -400px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: 2rem 1.5rem 4rem;
+        box-shadow: 0 -1px 10px rgba(0, 0, 0, .2);
+        border-radius: 10px 10px 0 0;
+        background-color: var(--body-color);
+        transition: .6s;
+
+        /* display: none; */
+    }
+}
+
+.nav__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+.nav__link {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+    transition: .3s;
+    font-weight: var(--font-semi-bold);
+}
+.nav__link:hover {
+    color: var(--text-color);
+}
+.close {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1rem;
+    font-size: 2rem;
+    color: var(--text-color);
+    display: inline-block;
+    transition: .3s;
+    cursor: pointer;
+}
+.close:hover {
+    color: (var(--title-color));
+}
+.nav__icon {
+    font-size: 1.2rem;
+}
+
+.show__menu {
+    bottom:0px;
+}
 
 
 /* show menu */
